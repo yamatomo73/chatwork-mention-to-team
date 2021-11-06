@@ -51,7 +51,7 @@ function loadTeamList(access_token) {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 const api_result = JSON.parse(xhr.responseText);
                 let team_data_list = {};
-                if (api_result.status.success) {
+                if (api_result.status.success && api_result.result.team_dat.children) {
                     api_result.result.team_dat.children.forEach(function (a_term_data) {
                         team_data_list[a_term_data["id"]] = a_term_data;
                     });

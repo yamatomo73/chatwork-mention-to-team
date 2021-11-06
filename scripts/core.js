@@ -258,7 +258,7 @@ $(function () {
     function createMentionString(team_name, team_members) {
         let data = 'To: ' + team_name + '\n';
         team_members.forEach(function (member) {
-            data += ' [To:' + member.aid + ']';
+            data += '[To:' + member.aid + '] ' + member.nm + '\n';
         });
         data += '\n';
         return data;
